@@ -1,4 +1,4 @@
-             {{#if hasProducts }}
+{{!-- {{#if hasProducts }}
         <div class="grid">
             {{#each prods}}
             <article class="card product-item">
@@ -21,4 +21,26 @@
         </div>
         {{ else }}
         <h1>No Products Found!</h1>
-        {{/if}}
+        {{/if}} --}}
+
+<div class="card">
+    {{#each Product}}
+    <div class="card-header">
+        <h2>{{this.product_name}}</h2>
+    </div>
+    <div class="card-image">
+        <figure class="image is-4by3">
+            <img src="{{this.product_photo}}" alt="{{this.product_name}}">
+        </figure>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            {{this.product_description}}
+        </div>
+        <footer class="card-footer">
+            <a href="#" class="card-footer-item">View Product</a>
+            <span class="card-footer-item">Quantity: {{this.quantity}}</span>
+        </footer>
+    </div>
+    {{/each}}
+</div>

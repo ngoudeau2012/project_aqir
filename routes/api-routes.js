@@ -2,7 +2,6 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const multer = require("multer");
-
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, "./public/uploads");
@@ -11,7 +10,6 @@ const storage = multer.diskStorage({
     cb(null, file.filename);
   }
 });
-
 const fileFilter = (req, res, cb) => {
   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
     cb(null, true);
@@ -26,7 +24,6 @@ const upload = multer({
   },
   fileFilter: fileFilter
 });
-
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -41,7 +38,6 @@ module.exports = function(app) {
       user_name: req.user.user_name
     });
   });
-
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -60,13 +56,11 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
   });
-
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
     if (!req.user) {
@@ -105,7 +99,6 @@ module.exports = function(app) {
         res.json(dbProduct);
       });
   });
-
   app.post("/api/addProduct", upload.single("productImage"), (req, res) => {
     console.log(req.file);
     db.create({
@@ -116,15 +109,12 @@ module.exports = function(app) {
       product_description: req.body.product_description
     });
   });
-
   app.get("/", function(req, res){
     res.render("index");
 });
-
 app.get("/home", function(req, res){
   res.render("home");
 });
-
 app.get("/api/login", function(req, res){
   res.render("home");
 });
