@@ -85,6 +85,7 @@ module.exports = function(app) {
     }
   });
   app.get("/api/products", (req, res) => {
+<<<<<<< HEAD
     db.product
       .findAll({
         include: [db.User]
@@ -105,6 +106,9 @@ module.exports = function(app) {
         res.json(dbProduct);
       });
   });
+=======
+<<<<<<< HEAD
+>>>>>>> development
 
   app.post("/api/addProduct", upload.single("productImage"), (req, res) => {
     console.log(req.file);
@@ -117,7 +121,47 @@ module.exports = function(app) {
     });
   });
 
+<<<<<<< HEAD
   app.get("/", function(req, res){
     res.render("index");
 });
+=======
+    
+  })
+  app.post("api/product", (req, res) => {
+    db.product.create({
+=======
+    db.product
+      .findAll({
+        include: [db.User]
+      })
+      .then(dbProduct => {
+        res.json(dbProduct);
+      });
+  });
+  app.get("/api/products/:id", (req, res) => {
+    db.product
+      .findOne({
+        include: [db.User],
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbProduct => {
+        res.json(dbProduct);
+      });
+  });
+>>>>>>> 8a33402c4461258dd36e72e4b3a097dfe3f20c26
+
+  app.post("/api/addProduct", upload.single("productImage"), (req, res) => {
+    console.log(req.file);
+    db.create({
+      product_name: req.body.product_name,
+      price: req.body.price,
+      quantity: req.body.quantity,
+      product_photo: req.file.path,
+      product_description: req.body.product_description
+    });
+  });
+>>>>>>> development
 };
