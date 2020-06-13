@@ -2,32 +2,36 @@
 <html lang="en">
 
 <head>
-  <title>AQIR</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello Bulma!</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
-    />
-{{!-- <link rel="stylesheet" href="/css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ pageTitle }}</title>
+    <link rel="stylesheet" href="/css/main.css">
     {{#if formsCSS}}
         <link rel="stylesheet" href="/css/forms.css">
     {{/if}}
     {{#if productCSS}}
         <link rel="stylesheet" href="/css/product.css">
-    {{/if}} --}}
+    {{/if}}
+     {{#if productCSS}}
+        <link rel="stylesheet" href="/css/product.css">
+    {{/if}}
+     {{#if productCSS}}
+        <link rel="stylesheet" href="/css/product.css">
+    {{/if}}
 </head>
+
 <body>
-    {{!-- <header class="main-header">
+    <header class="main-header">
         <nav class="main-header__nav">
             <ul class="main-header__item-list">
-                <li class="main-header__item"><a class="{{#if activeShop }}active{{/if}}" href="/">Home</a></li>
+                <li class="main-header__item"><a class="{{#if activeHome }}active{{/if}}" href="/">Home</a></li>
                 <li class="main-header__item"><a class="{{#if activeAddProduct }}active{{/if}}" href="/admin/add-product">Add Product</a></li>
-                <li class="main-header__item"><a class="{{#if activeAddProduct }}active{{/if}}" href="/admin/add-product">Account</a></li>
+                 <li class="main-header__item"><a class="{{#if activeAccount }}active{{/if}}" href="/">Account</a></li>
+                  <li class="main-header__item"><a class="{{#if activeCheckout }}active{{/if}}" href="/">Chechout</a></li>
             </ul>
         </nav>
-    </header> --}}
+    </header>
     {{{ body }}}
 </body>
 
