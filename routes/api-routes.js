@@ -1,6 +1,31 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, "./public/uploads");
+  },
+  filename: function(req, res, cb) {
+    cb(null, file.filename);
+  }
+});
+
+const fileFilter = (req, res, cb) => {
+  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+const upload = multer({
+  storage: storage,
+  limits: {
+    fileSize: 1024 * 1024 * 5
+  },
+  fileFilter: fileFilter
+});
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -10,7 +35,10 @@ module.exports = function(app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id
+      id: req.user.id,
+      first_name: req.user.first_name,
+      last_name: req.user.last_name,
+      user_name: req.user.user_name
     });
   });
 
@@ -20,7 +48,10 @@ module.exports = function(app) {
   app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      user_name: req.body.user_name
     })
       .then(() => {
         res.redirect(307, "/api/login");
@@ -46,11 +77,15 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        first_name: req.user.first_name,
+        last_name: req.user.last_name,
+        user_name: req.user.user_name
       });
     }
   });
   app.get("/api/products", (req, res) => {
+<<<<<<< HEAD
 
     db.product.findAll({
       include: [db.User]
@@ -62,7 +97,37 @@ module.exports = function(app) {
   })
   app.post("api/product", (req, res) => {
     db.product.create({
+=======
+    db.product
+      .findAll({
+        include: [db.User]
+      })
+      .then(dbProduct => {
+        res.json(dbProduct);
+      });
+  });
+  app.get("/api/products/:id", (req, res) => {
+    db.product
+      .findOne({
+        include: [db.User],
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbProduct => {
+        res.json(dbProduct);
+      });
+  });
+>>>>>>> 8a33402c4461258dd36e72e4b3a097dfe3f20c26
 
-    })
-  })
+  app.post("/api/addProduct", upload.single("productImage"), (req, res) => {
+    console.log(req.file);
+    db.create({
+      product_name: req.body.product_name,
+      price: req.body.price,
+      quantity: req.body.quantity,
+      product_photo: req.file.path,
+      product_description: req.body.product_description
+    });
+  });
 };
