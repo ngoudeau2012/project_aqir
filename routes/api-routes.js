@@ -51,7 +51,7 @@ module.exports = function(app) {
     }
   });
   app.get("/api/products", (req, res) => {
-    
+
     db.product.findAll({
       include: [db.User]
     }).then(function(dbProduct) {

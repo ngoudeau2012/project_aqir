@@ -28,7 +28,6 @@
     "no-unused-vars": "error",
     "no-var": "error",
     "prefer-const": "error",
-    "prettier/prettier": "error",
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "vars-on-top": "error",
