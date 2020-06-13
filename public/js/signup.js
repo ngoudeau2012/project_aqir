@@ -58,7 +58,7 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/");
+        window.location.replace("/home");
         console.log(first_name, last_name, username, email, password);
 
         // If there's an error, handle it by throwing up a bootstrap alert
