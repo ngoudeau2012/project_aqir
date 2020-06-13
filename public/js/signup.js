@@ -43,17 +43,17 @@ $(document).ready(() => {
       passwordInput.val("");
   });
 
-  function signUpUser(first_name, last_name, user_name, email, password) {
-    console.log(first_name, last_name, user_name, email, password);
-  }
+  // function signUpUser(first_name, last_name, user_name, email, password) {
+  //   console.log(first_name, last_name, user_name, email, password);
+  // }
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(first_name, last_name, username, email, password) {
+  function signUpUser(first_name, last_name, user_name, email, password) {
     $.post("/api/signup", {
       first_name: first_name,
       last_name: last_name,
-      username: username,
+      user_name: user_name,
       email: email,
       password: password
     })
