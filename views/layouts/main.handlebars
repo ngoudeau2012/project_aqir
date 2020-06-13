@@ -2,8 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>AQIR</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <link href="stylesheets/style.css" rel="stylesheet" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ pageTitle }}</title>
     <link rel="stylesheet" href="/css/main.css">
@@ -22,15 +28,51 @@
 </head>
 
 <body>
+
+
     <header class="main-header">
-        <nav class="main-header__nav">
-            <ul class="main-header__item-list">
-                <li class="main-header__item"><a class="{{#if activeHome }}active{{/if}}" href="/">Home</a></li>
-                <li class="main-header__item"><a class="{{#if activeAddProduct }}active{{/if}}" href="/admin/add-product">Add Product</a></li>
-                 <li class="main-header__item"><a class="{{#if activeAccount }}active{{/if}}" href="/">Account</a></li>
-                  <li class="main-header__item"><a class="{{#if activeCheckout }}active{{/if}}" href="/">Chechout</a></li>
-            </ul>
-        </nav>
+
+
+         <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <!-- <a class="navbar-item" href="https://bulma.io">
+        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+      </a> -->
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="{{#if activeHome }}active{{/if}}" href="/">Home</a>
+          <a class="{{#if activeAddProduct }}active{{/if}}" href="/admin/add-product">Add Product</a>
+          <a class="{{#if activeAccount }}active{{/if}}" href="/">Account</a>
+          <a class="{{#if activeCheckout }}active{{/if}}" href="/">Checkout</a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light">
+                Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     </header>
     {{{ body }}}
 </body>
