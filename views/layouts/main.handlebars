@@ -11,7 +11,7 @@
     />
     <link href="stylesheets/style.css" rel="stylesheet" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ pageTitle }}</title>
+    {{!-- <title>{{ pageTitle }}</title>
     <link rel="stylesheet" href="/css/main.css">
     {{#if formsCSS}}
         <link rel="stylesheet" href="/css/forms.css">
@@ -24,7 +24,7 @@
     {{/if}}
      {{#if productCSS}}
         <link rel="stylesheet" href="/css/product.css">
-    {{/if}}
+    {{/if}} --}}
 </head>
 
 <body>
@@ -53,10 +53,10 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="{{#if activeHome }}active{{/if}}" href="/">Home</a>
-          <a class="{{#if activeAddProduct }}active{{/if}}" href="/admin/add-product">Add Product</a>
-          <a class="{{#if activeAccount }}active{{/if}}" href="/">Account</a>
-          <a class="{{#if activeCheckout }}active{{/if}}" href="/">Checkout</a>
+          <a class="{{#if activeHome }}active{{/if}} navbar-item" href="/">Home</a>
+          <a class="{{#if activeAddProduct }}active{{/if}} navbar-item" href="/admin/add-product">Add Product</a>
+          <a class="{{#if activeAccount }}active{{/if}} navbar-item" href="/">Account</a>
+          <a class="{{#if activeCheckout }}active{{/if}} navbar-item" href="/">Checkout</a>
         </div>
 
         <div class="navbar-end">
