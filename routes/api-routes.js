@@ -78,6 +78,11 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.get("/add-product", (req,res) => {
+    res.render("newProduct");
+  });
+
   app.get("/api/products", (req, res) => {
     db.product
       .findAll({
@@ -99,13 +104,14 @@ module.exports = function(app) {
         res.json(dbProduct);
       });
   });
-  app.post("/api/addProduct", upload.single("productImage"), (req, res) => {
+  app.post("/api/addProduct", (req, res) => {
     console.log(req.file);
-    db.create({
+    db.product.create({
       product_name: req.body.product_name,
       price: req.body.price,
       quantity: req.body.quantity,
-      product_photo: req.file.path,
+      product_category: req.body.product_category,
+      product_photo: req.body.product_photo,
       product_description: req.body.product_description
     });
   });
