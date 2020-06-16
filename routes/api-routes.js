@@ -107,14 +107,27 @@ module.exports = function(app) {
       quantity: req.body.quantity,
       product_photo: req.file.path,
       product_description: req.body.product_description
-    });
+    })
+    //reloads page
+    .then(res.redirect("home"));
   });
+
   app.get("/", function(req, res){
     res.render("index");
 });
 app.get("/home", function(req, res){
-  res.render("home");
-});
+  // res.render("home");
+  db.Product.findAll()
+  .then(data => {
+    const hbsObject = {
+      products: data
+    };
+    console.log(hbsObject);
+    res.render("home", hbsObject);
+  });
+  }); 
+
+
 app.get("/api/login", function(req, res){
   res.render("home");
 });
