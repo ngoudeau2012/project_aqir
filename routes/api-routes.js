@@ -116,12 +116,12 @@ module.exports = function(app) {
     });
   });
   app.get("/", function(req, res){
-    res.render("index");
+    res.render("signup");
 });
 app.get("/home", function(req, res){
   res.render("home");
 });
-app.get("/api/login", function(req, res){
-  res.render("home");
+app.get("/login", function(req, res){
+  res.render("login");
 });
 };
