@@ -83,15 +83,15 @@ module.exports = function(app) {
     res.render("newProduct");
   });
 
-  app.get("/api/products", (req, res) => {
-    db.product
-      .findAll({
-        include: [db.User]
-      })
-      .then(dbProduct => {
-        res.json(dbProduct);
-      });
-  });
+  // app.get("/api/products", (req, res) => {
+  //   db.product
+  //     .findAll({
+  //       include: [db.User]
+  //     })
+  //     .then(dbProduct => {
+  //       res.json(dbProduct);
+  //     });
+  // });
   app.get("/api/products/:id", (req, res) => {
     db.product
       .findOne({
@@ -119,7 +119,7 @@ module.exports = function(app) {
   });
 
   app.get("/", function(req, res){
-    res.render("index");
+    res.render("signup");
 });
 app.get("/home", function(req, res){
   // res.render("home");
@@ -134,7 +134,7 @@ app.get("/home", function(req, res){
   }); 
 
 
-app.get("/api/login", function(req, res){
+app.get("/login", function(req, res){
   res.render("login");
 });
 };
