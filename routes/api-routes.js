@@ -135,6 +135,6 @@ app.get("/home", function(req, res){
 
 
 app.get("/api/login", function(req, res){
-  res.render("home");
+  res.render("login");
 });
 };
