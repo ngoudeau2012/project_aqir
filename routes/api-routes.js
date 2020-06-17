@@ -134,6 +134,18 @@ app.get("/home", function(req, res){
   });
   });
 
+  app.get("/userAcct", function(req, res){
+    // res.render("home");
+    db.product.findAll()
+    .then(data => {
+      const products = {
+        products: data
+      };
+      console.log(products);
+      res.render("userAcct", products);
+    });
+    });
+
 
 app.get("/login", function(req, res){
   res.render("login");
