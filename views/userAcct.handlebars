@@ -1,0 +1,24 @@
+{{User}}
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="username">
+        Username: {{this.dataValues.user_name}}
+      </h2>
+      <h2 class="email">
+        Email: {{this.dataValues.email}}
+      </h2>
+      <h2 class="fullName">
+        Name: {{this.dataValues.first_name}} {{this.dataValues.last_name}}
+      </h2>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+    <div class="row columns is-multiline">
+        {{!-- <div class="column is-3"> --}}
+            {{> products/productCard}}
+        {{!-- </div> --}}
+    </div>
+</div>
