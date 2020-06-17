@@ -132,7 +132,7 @@ app.get("/home", function(req, res){
     console.log(products);
     res.render("home", products);
   });
-  }); 
+  });
 
 
 app.get("/login", function(req, res){
