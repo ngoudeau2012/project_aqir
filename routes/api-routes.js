@@ -112,7 +112,8 @@ module.exports = function(app) {
       quantity: req.body.quantity,
       product_category: req.body.product_category,
       product_photo: req.body.product_photo,
-      product_description: req.body.product_description
+      product_description: req.body.product_description,
+      UserId: req.user.id
     })
     //reloads page
     .then(res.redirect("home"));
@@ -123,13 +124,13 @@ module.exports = function(app) {
 });
 app.get("/home", function(req, res){
   // res.render("home");
-  db.Product.findAll()
+  db.product.findAll()
   .then(data => {
-    const hbsObject = {
+    const products = {
       products: data
     };
-    console.log(hbsObject);
-    res.render("home", hbsObject);
+    console.log(products);
+    res.render("home", products);
   });
   }); 
 

@@ -8,16 +8,16 @@ $(document).ready(() => {
   loginForm.on("submit", event => {
     event.preventDefault();
     const userData = {
-      username: usernameInput.val().trim(),
+      user_name: usernameInput.val().trim(),
       password: passwordInput.val().trim()
     };
 
-    if (!userData.username || !userData.password) {
+    if (!userData.user_name || !userData.password) {
       return;
     }
 
     // If we have an email and password we run the loginUser function and clear the form
-    loginUser(userData.username, userData.password);
+    loginUser(userData.user_name, userData.password);
     usernameInput.val("");
     passwordInput.val("");
   });
