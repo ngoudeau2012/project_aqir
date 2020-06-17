@@ -5,7 +5,7 @@ $(document).ready(() => {
     const productPriceInput = $("input#price");
     const productQuantityInput = $("input#quantity");
     const productCategoryInput = $("select#category");
-    const productImageInput = $("input#imageURL")
+    const productImageInput = $("input#imageURL");
     const productDescInput = $("textarea#description");
 
     addProductForm.on("submit", event => {

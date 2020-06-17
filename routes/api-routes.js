@@ -83,15 +83,15 @@ module.exports = function(app) {
     res.render("newProduct");
   });
 
-  app.get("/api/products", (req, res) => {
-    db.product
-      .findAll({
-        include: [db.User]
-      })
-      .then(dbProduct => {
-        res.json(dbProduct);
-      });
-  });
+  // app.get("/api/products", (req, res) => {
+  //   db.product
+  //     .findAll({
+  //       include: [db.User]
+  //     })
+  //     .then(dbProduct => {
+  //       res.json(dbProduct);
+  //     });
+  // });
   app.get("/api/products/:id", (req, res) => {
     db.product
       .findOne({
@@ -113,14 +113,27 @@ module.exports = function(app) {
       product_category: req.body.product_category,
       product_photo: req.body.product_photo,
       product_description: req.body.product_description
-    });
+    })
+    //reloads page
+    .then(res.redirect("home"));
   });
+
   app.get("/", function(req, res){
     res.render("signup");
 });
 app.get("/home", function(req, res){
-  res.render("home");
-});
+  // res.render("home");
+  db.Product.findAll()
+  .then(data => {
+    const hbsObject = {
+      products: data
+    };
+    console.log(hbsObject);
+    res.render("home", hbsObject);
+  });
+  }); 
+
+
 app.get("/login", function(req, res){
   res.render("login");
 });
