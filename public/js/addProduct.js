@@ -58,8 +58,8 @@ function addProduct(product_name,price,quantity,product_category,product_photo,p
     })
     .then(() => {
         window.location.replace("/product/:id");
-    })
-    .catch(handleAddProductErr());
+    },handleAddProductErr
+    );
     }
     
     function handleAddProductErr(err){
