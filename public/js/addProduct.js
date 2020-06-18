@@ -57,13 +57,9 @@ function addProduct(product_name,price,quantity,product_category,product_photo,p
         product_description: product_description,
     })
     .then(() => {
-        // window.location.replace("/product/:id")
-        // .then(() => {
-            window.location.replace("/home")
-            // console.log(first_name, last_name, username, email, password);
-            .catch(err => {
-                console.log(err);
-              });
+
+        window.location.replace("/home");
+
     },handleAddProductErr
     );
     }
