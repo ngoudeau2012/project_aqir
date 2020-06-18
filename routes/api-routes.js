@@ -110,44 +110,7 @@ module.exports = function(app) {
         res.render("userAcct", products);
       });
   });
-  app.get("/price", function(req, res) {
-    db.product
-      .findAll({
-        where: {
-          UserId: req.user.id,
-        },
-        include: [db.User],
-        
-          order: sequelize.col("price")
-       
-      })
-      .then(data => {
-        let prices = {
-          products: data,
-        };
 
-        
-        res.render("home", prices);
-      });
-  });
-  app.get("/price/des", function(req, res) {
-    db.product
-      .findAll({
-        where: {
-          UserId: req.user.id,
-          
-        } ,   
-        order:[ ['price', 'DESC']],
-      })
-      .then(data => {
-        let prices = {
-          products: data,
-        };
-
-        
-        res.render("home", prices);
-      });
-  });
 
   app.get("/login", function(req, res) {
     res.render("login");
