@@ -78,7 +78,7 @@ module.exports = function(app) {
       );
   });
 
-  app.get("/", function(req, res) {
+  app.get("/signup", function(req, res) {
     res.render("signup");
   });
 
@@ -145,7 +145,7 @@ module.exports = function(app) {
     res.render("cart");
   });
 
-  app.get("/login", function(req, res) {
+  app.get("/", function(req, res) {
     res.render("login");
   });
 };
