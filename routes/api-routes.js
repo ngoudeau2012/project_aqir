@@ -21,7 +21,7 @@ module.exports = function(app) {
       user_name: req.body.user_name,
     })
       .then(() => {
-        res.redirect(307, "/api/login");
+        res.redirect("/home");
       })
       .catch(err => {
         res.status(401).json(err);
@@ -73,9 +73,11 @@ module.exports = function(app) {
         product_description: req.body.product_description,
         UserId: req.user.id,
       })
+
       .then(
         res.redirect("/home")
       );
+
   });
 
   app.get("/", function(req, res) {
@@ -106,6 +108,44 @@ module.exports = function(app) {
         };
         console.log(products);
         res.render("userAcct", products);
+      });
+  });
+  app.get("/price", function(req, res) {
+    db.product
+      .findAll({
+        where: {
+          UserId: req.user.id,
+        },
+        include: [db.User],
+        
+          order: sequelize.col("price")
+       
+      })
+      .then(data => {
+        let prices = {
+          products: data,
+        };
+
+        
+        res.render("home", prices);
+      });
+  });
+  app.get("/price/des", function(req, res) {
+    db.product
+      .findAll({
+        where: {
+          UserId: req.user.id,
+          
+        } ,   
+        order:[ ['price', 'DESC']],
+      })
+      .then(data => {
+        let prices = {
+          products: data,
+        };
+
+        
+        res.render("home", prices);
       });
   });
 
