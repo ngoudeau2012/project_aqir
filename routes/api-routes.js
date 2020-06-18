@@ -131,6 +131,54 @@ module.exports = function(app) {
       });
   });
 
+  app.get("/api/price", function(req, res) {
+    db.product
+    .findAll({
+      order: [
+        ["price", "ASC"]
+      ]
+    })
+    .then(data => {
+      const products = {
+        products: data,
+      };
+      console.log(products);
+      res.render("userAcct", products);
+    });
+  });
+
+  app.get("/api/category", function(req, res) {
+    db.product
+    .findAll({
+      order: [
+        [product_category, "ASC"]
+      ]
+    })
+    .then(data => {
+      const products = {
+        products: data,
+      };
+      console.log(products);
+      res.render("userAcct", products);
+    });
+  });
+
+  app.get("/api/user", function(req, res) {
+    db.product
+    .findAll({
+      order: [
+        [UserId, "ASC"]
+      ]
+    })
+    .then(data => {
+      const products = {
+        products: data,
+      };
+      console.log(products);
+      res.render("userAcct", products);
+    });
+  });
+
   app.get("/login", function(req, res) {
     res.render("login");
   });
