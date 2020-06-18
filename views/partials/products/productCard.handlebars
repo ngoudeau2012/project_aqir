@@ -1,21 +1,19 @@
     {{#each products}}
 <div class="column is-3">
-    <div class="card">
-        <div class="card-header">
-            <h2>{{this.dataValues.product_name}}</h2>
-        </div>
+    <div class="card"> 
         <div class="card-image">
             <figure class="image is-4by3">
                 <img src="{{this.dataValues.product_photo}}" alt="{{this.dataValues.product_name}}">
             </figure>
         </div>
+        <div class="product-name">
+            <p>{{this.dataValues.product_name}}</p>
+        </div>
         <div class="card-content">
-            <div class="content">
-                {{this.dataValues.product_description}}
-            </div>
             <footer class="card-footer">
-                <a href="#" class="card-footer-item">View Product</a>
-                <span class="card-footer-item">Price: {{this.dataValues.price}}</span>
+                <a href="#" class="card-footer-item">View Product Description</a>
+                <span class="card-footer-item">Price: ${{this.dataValues.price}}</span>
+
             </footer>
         </div>
     </div>

@@ -57,7 +57,9 @@ function addProduct(product_name,price,quantity,product_category,product_photo,p
         product_description: product_description,
     })
     .then(() => {
+
         window.location.replace("/home");
+
     },handleAddProductErr
     );
     }
