@@ -2,3 +2,15 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+.navbar {
+  padding: .75em 0em;
+  background: #3b3c38;
+  color: white;
+}
+.product-name {
+  padding: 1em;
+  font-weight: bold;
+}

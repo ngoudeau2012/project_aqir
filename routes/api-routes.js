@@ -1,28 +1,6 @@
 const db = require("../models");
 const passport = require("../config/passport");
-const multer = require("multer");
-const storage = multer.diskStorage({
-  destination: function(req, file, cb) {
-    cb(null, "./public/uploads");
-  },
-  filename: function(req, res, cb) {
-    cb(null, file.filename);
-  },
-});
-const fileFilter = (req, res, cb) => {
-  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-    cb(null, true);
-  } else {
-    cb(null, false);
-  }
-};
-const upload = multer({
-  storage: storage,
-  limits: {
-    fileSize: 1024 * 1024 * 5,
-  },
-  fileFilter: fileFilter,
-});
+
 module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     res.json({
@@ -85,7 +63,6 @@ module.exports = function(app) {
       });
   });
   app.post("/api/addProduct", (req, res) => {
-    console.log(req.file);
     db.product
       .create({
         product_name: req.body.product_name,
@@ -96,8 +73,9 @@ module.exports = function(app) {
         product_description: req.body.product_description,
         UserId: req.user.id,
       })
-
-      .then(res.redirect("home"));
+      .then(
+        res.redirect("/home")
+      );
   });
 
   app.get("/", function(req, res) {
