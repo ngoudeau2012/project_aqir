@@ -50,18 +50,37 @@ module.exports = function(app) {
     res.render("newProduct");
   });
 
-  app.get("/api/products/:id", (req, res) => {
+  // app.get("/api/products/:id", (req, res) => {
+  //   db.product
+  //     .findOne({
+  //       include: [db.User],
+  //       where: {
+  //         id: req.params.id,
+  //       },
+  //     })
+  //     .then(dbProduct => {
+  //       res.json(dbProduct);
+  //     });
+  // });
+
+  app.get("/api/:id", (req, res) => {
     db.product
       .findOne({
-        include: [db.User],
+        // include: [db.User],
         where: {
           id: req.params.id,
         },
       })
-      .then(dbProduct => {
-        res.json(dbProduct);
+      .then(data => {
+        const productPage = {
+          products: data,
+        };
+        console.log(productPage);
+        res.render("product", productPage);
       });
-  });
+    });
+
+
   app.post("/api/addProduct", (req, res) => {
     db.product
       .create({

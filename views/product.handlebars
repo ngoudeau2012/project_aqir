@@ -1,0 +1,51 @@
+<header class="main-header">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item has-text-primary" href="/home">Home</a>
+        <a class="navbar-item has-text-primary" href="/add-product">Add Product</a>
+        <a class="navbar-item has-text-primary" href="/userAcct">Account</a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-item has-text-white navbar-end" href="/cart"><i class="fas fa-shopping-cart is-primary"></i></a>
+        </div>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary signUpBtn" href="/logout">
+              <strong>Log Out</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+{{productPage}}
+<div class="column is-3">
+    <div class="card"> 
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <img src="{{this.dataValues.product_photo}}" alt="{{this.dataValues.product_name}}">
+            </figure>
+        </div>
+        <div class="product-name">
+            <p>{{this.dataValues.product_name}}</p>
+        </div>
+        <div class="card-content">
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item">View Product Description</a>
+                <span class="card-footer-item">Price: ${{this.dataValues.price}}</span>
+            </footer>
+        </div>
+    </div>
+</div>
