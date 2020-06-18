@@ -6,11 +6,22 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 .navbar {
-  padding: .75em 0em;
-  background: #3b3c38;
+  padding: .5em 0em;
+  background: #086972;
   color: white;
-}
-.product-name {
-  padding: 1em;
+  margin-bottom:1em;
   font-weight: bold;
+  font-size: 1.2em;
+}
+
+.product-name {
+  padding: 1.5em;
+  color: #5d5d5a;
+  font-weight: bold;
+  border-bottom: black;
+}
+
+.button {
+  background-color: #17b978;
+  color:white;
 }
