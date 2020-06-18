@@ -73,7 +73,7 @@ $(document).ready(() => {
     modalEl.removeClass("is-active");
   });
 
-  modalCloseBtn.on("click", () => {
+  modalCloseBtn.on("click", ()  => {
     modalEl.removeClass("is-active");
   });
   function handleLoginErr(err) {
