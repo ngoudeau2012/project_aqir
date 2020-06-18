@@ -63,7 +63,6 @@ function addProduct(product_name,price,quantity,product_category,product_photo,p
     },handleAddProductErr
     );
     }
-    
     function handleAddProductErr(err){
         $("#alert .msg").text(err.responseJSON);
         $("#alert").fadeIn(500);
