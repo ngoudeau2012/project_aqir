@@ -108,6 +108,42 @@ module.exports = function(app) {
         res.render("userAcct", products);
       });
   });
+  app.get("/asc", function(req, res) {
+    db.product
+      .findAll({
+        where: {
+          UserId: req.user.id,
+        },
+        include: [db.User],
+        order:[ ["price"]],
+       
+      })
+      .then(data => {
+        const prices = {
+          products: data,
+        };
+        res.render("home", prices);
+      });
+  });
+  app.get("/desc", function(req, res) {
+    db.product
+      .findAll({
+        where: {
+          UserId: req.user.id,
+        } ,   
+        order:[["price", "DESC"]],
+      })
+      .then(data => {
+        const high = {
+          products: data,
+        };
+        res.render("home", high);
+      });
+  });
+
+  app.get("/cart", function(req, res) {
+    res.render("cart");
+  });
 
   app.get("/login", function(req, res) {
     res.render("login");
