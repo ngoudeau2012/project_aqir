@@ -111,12 +111,7 @@ module.exports = function(app) {
   app.get("/asc", function(req, res) {
     db.product
       .findAll({
-        where: {
-          UserId: req.user.id,
-        },
-        include: [db.User],
         order:[ ["price"]],
-       
       })
       .then(data => {
         const prices = {
@@ -128,9 +123,6 @@ module.exports = function(app) {
   app.get("/desc", function(req, res) {
     db.product
       .findAll({
-        where: {
-          UserId: req.user.id,
-        } ,   
         order:[["price", "DESC"]],
       })
       .then(data => {
