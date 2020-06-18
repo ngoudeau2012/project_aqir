@@ -8,5 +8,13 @@ body {
 }
 
 .navbar {
-  background: darkcyan;
+  padding: .75em 0em;
+  background: #3b3c38;
+  color: white;
+  margin-bottom:1em;
+}
+
+.product-name {
+  padding: 1.5em;
+  font-weight: bold;
 }

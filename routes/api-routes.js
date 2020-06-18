@@ -105,7 +105,6 @@ module.exports = function(app) {
       });
   });
   app.post("/api/addProduct", (req, res) => {
-    console.log(req.file);
     db.product.create({
       product_name: req.body.product_name,
       price: req.body.price,
@@ -115,8 +114,8 @@ module.exports = function(app) {
       product_description: req.body.product_description,
       UserId: req.user.id
     })
-    //reloads page
-    .then(res.redirect("home"));
+    // reloads page
+    .then(res.redirect("/home"));
   });
 
   app.get("/", function(req, res){

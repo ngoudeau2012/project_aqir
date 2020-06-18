@@ -30,12 +30,12 @@ $(document).ready(() => {
         productData.product_description,
     );
 
-    productNameInput.val("");
-    productPriceInput.val("");
-    productQuantityInput.val("");
-    productCategoryInput.val("");
-    productImageInput.val("");
-    productDescInput.val("");
+    // productNameInput.val("");
+    // productPriceInput.val("");
+    // productQuantityInput.val("");
+    // productCategoryInput.val("");
+    // productImageInput.val("");
+    // productDescInput.val("");
 });
 
 function addProduct(product_name,price,quantity,product_category,product_photo,product_description) {
@@ -57,7 +57,7 @@ function addProduct(product_name,price,quantity,product_category,product_photo,p
         product_description: product_description,
     })
     .then(() => {
-        window.location.replace("/product/:id");
+        window.location.replace("/home");
     },handleAddProductErr
     );
     }
