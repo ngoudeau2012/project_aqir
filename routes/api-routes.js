@@ -73,9 +73,7 @@ module.exports = function(app) {
         product_description: req.body.product_description,
         UserId: req.user.id,
       })
-      .then(
-        res.redirect("/home")
-      );
+      .then(res.redirect("/home"));
   });
 
   app.get("/signup", function(req, res) {
@@ -111,12 +109,7 @@ module.exports = function(app) {
   app.get("/asc", function(req, res) {
     db.product
       .findAll({
-        where: {
-          UserId: req.user.id,
-        },
-        include: [db.User],
-        order:[ ["price"]],
-       
+        order: [["price"]],
       })
       .then(data => {
         const prices = {
@@ -128,10 +121,7 @@ module.exports = function(app) {
   app.get("/desc", function(req, res) {
     db.product
       .findAll({
-        where: {
-          UserId: req.user.id,
-        } ,   
-        order:[["price", "DESC"]],
+        order: [["price", "DESC"]],
       })
       .then(data => {
         const high = {
