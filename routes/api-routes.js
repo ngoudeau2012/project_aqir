@@ -21,7 +21,7 @@ module.exports = function(app) {
       user_name: req.body.user_name,
     })
       .then(() => {
-        res.redirect("/home");
+        res.redirect(307, "/api/login");
       })
       .catch(err => {
         res.status(401).json(err);
@@ -73,11 +73,9 @@ module.exports = function(app) {
         product_description: req.body.product_description,
         UserId: req.user.id,
       })
-
       .then(
         res.redirect("/home")
       );
-
   });
 
   app.get("/", function(req, res) {
@@ -110,7 +108,6 @@ module.exports = function(app) {
         res.render("userAcct", products);
       });
   });
-
 
   app.get("/login", function(req, res) {
     res.render("login");
