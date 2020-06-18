@@ -1,6 +1,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const multer = require("multer");
+const sequelize = require("sequelize");
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, "./public/uploads");
@@ -43,7 +44,7 @@ module.exports = function(app) {
       user_name: req.body.user_name,
     })
       .then(() => {
-        res.redirect(307, "/api/login");
+        res.redirect("/home");
       })
       .catch(err => {
         res.status(401).json(err);
@@ -97,7 +98,7 @@ module.exports = function(app) {
         UserId: req.user.id,
       })
 
-      .then(res.redirect("home"));
+      .then(res.redirect("/home"));
   });
 
   app.get("/", function(req, res) {
@@ -128,6 +129,44 @@ module.exports = function(app) {
         };
         console.log(products);
         res.render("userAcct", products);
+      });
+  });
+  app.get("/price", function(req, res) {
+    db.product
+      .findAll({
+        where: {
+          UserId: req.user.id,
+        },
+        include: [db.User],
+        
+          order: sequelize.col("price")
+       
+      })
+      .then(data => {
+        let prices = {
+          products: data,
+        };
+
+        
+        res.render("home", prices);
+      });
+  });
+  app.get("/price/des", function(req, res) {
+    db.product
+      .findAll({
+        where: {
+          UserId: req.user.id,
+          
+        } ,   
+        order:[ ['price', 'DESC']],
+      })
+      .then(data => {
+        let prices = {
+          products: data,
+        };
+
+        
+        res.render("home", prices);
       });
   });
 
