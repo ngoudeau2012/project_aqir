@@ -3,13 +3,15 @@ form.login {
   margin-top: 50px;
 }
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  
 }
 .navbar {
-  padding: 0.5em 0em;
+  padding: .5em 0em;
   background: #086972;
   color: white;
-  margin-bottom: 1em;
+  margin-bottom:1em;
+  /* font-weight: bold; */
   font-size: 1.2em;
 }
 
@@ -22,33 +24,37 @@ body {
 
 .button {
   background-color: #17b978;
-  color: white;
+  color:white;
 }
-.logo {
+.logo{
   font-family: "PhosphateInline";
   font-size: 49px;
+  margin-bottom: -.6em;
   color: white;
 }
-.sign-up-logo {
-  background-color: #086972;
-  vertical-align: auto;
-  text-align: center;
+.sign-up-logo{
+ background-color: #086972;
+ vertical-align: auto;
+ text-align: center;
 }
-.center {
-  text-align: center;
-  padding-top: 0.5em;
+.center{
+  text-align:center;
+  padding-top: .5em;
+
 }
-.logo-color {
+.logo-color{
   color: #086972;
   font-weight: bold;
 }
-.pop {
-  color: #a7ff83;
+.pop{
+  color: #A7FF83;
 }
-
-.dropdown {
-  margin: -0.3em 0em 1em 3em;
+.message{
+  display: ;
 }
-.categorybtn {
+.dropdown{
+  margin: -.3em 0em 1em 3em;
+}
+.categorybtn{
   padding: 0em 2em;
 }
