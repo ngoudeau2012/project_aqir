@@ -6,9 +6,6 @@ $(document).ready(() => {
   const usernameInput = $("input#usernameInput");
   const emailInput = $("input#emailInput");
   const passwordInput = $("input#passwordInput");
-  const modalClose = $("button.delete");
-  const modalEl = $(".modal");
-  const modalCloseBtn = $("button.close");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
@@ -69,13 +66,6 @@ $(document).ready(() => {
       .catch(handleLoginErr);
   }
 
-  modalClose.on("click", () => {
-    modalEl.removeClass("is-active");
-  });
-
-  modalCloseBtn.on("click", () => {
-    modalEl.removeClass("is-active");
-  });
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
