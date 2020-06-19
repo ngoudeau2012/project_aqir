@@ -1,39 +1,20 @@
-{{#products}}
+    {{#each products}}
 <div class="column is-3">
-    <div class="card">
+    <div class="card"> 
         <div class="card-image">
             <figure class="image is-4by3">
-                <img src="{{dataValues.product_photo}}" alt="{{dataValues.product_name}}">
+                <img src="{{this.dataValues.product_photo}}" alt="{{this.dataValues.product_name}}">
             </figure>
         </div>
         <div class="product-name">
-            <p>{{dataValues.product_name}}</p>
+            <p>{{this.dataValues.product_name}}</p>
         </div>
         <div class="card-content">
             <footer class="card-footer">
-                <button class="button viewItem" data-toggle="modal" data-target="#myModal{{@index}}">View Item</button>
-                <span class="card-footer-item">Price: ${{dataValues.price}}</span>
+                <a href="#" class="card-footer-item">View Product Description</a>
+                <span class="card-footer-item">Price: ${{this.dataValues.price}}</span>
             </footer>
         </div>
     </div>
 </div>
-
-<div class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-        <header class="modal-card-head">
-            <p class="modal-card-title">View Item Under Construction</p>
-            <button class="delete" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-            <p class="title">Hi there!</p>
-            </br>
-            <p>Unfortunately our site is under construction. We are working hard to get the view item functionality
-                fully working. Please check back soon and thank you for your patience!</p>
-        </section>
-        <footer class="modal-card-foot">
-            <button class="button close">Close</button>
-        </footer>
-    </div>
-</div>
-{{/products}}
+    {{/each}}
