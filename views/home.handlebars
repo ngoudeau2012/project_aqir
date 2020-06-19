@@ -1,7 +1,12 @@
 <header class="main-header">
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <p class="logo navbar-item has-text-white">A<span class="pop">Q</span>IR</p>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
@@ -10,13 +15,9 @@
         <a class="navbar-item has-text-white" href="/add-product">Add Product</a>
         <a class="navbar-item has-text-white" href="/userAcct">Account</a>
       </div>
-      <div class="navbar-brand">
-
-      </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          <a class="navbar-item has-text-white navbar-end" href="/cart"><i
-              class="fas fa-shopping-cart is-primary"></i></a>
+          <a class="navbar-item has-text-white navbar-end"><i class="fas fa-shopping-cart is-primary" href="/cart"></i></a>
         </div>
         <div class="navbar-item">
           <div class="buttons">
@@ -28,30 +29,10 @@
       </div>
     </div>
   </nav>
-  <div class="dropdown is-hoverable">
-    <div class="dropdown-trigger">
-      <button class="button categorybtn" aria-haspopup="true" aria-controls="dropdown-menu">
-        <span>Price</span>
-        <span class="icon is-small">
-          <i class="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </button>
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-      <div class="dropdown-content">
-        <a href="/asc" class="dropdown-item">
-          Low To High
-        </a>
-        <a href="/desc" class="dropdown-item">
-          High To Low
-        </a>
-      </div>
-    </div>
-  </div>
-
+  
   <div class="container">
     <div class="row columns is-multiline">
       {{> products/productCard}}
     </div>
   </div>
-  <script type="text/javascript" src="js/home.js"></script>
+  <script type="text/javascript" src="js/members.js"></script>
