@@ -1,6 +1,6 @@
-    {{#each products}}
+{{#each products}}
 <div class="column is-3">
-    <div class="card"> 
+    <div class="card">
         <div class="card-image">
             <figure class="image is-4by3">
                 <img src="{{this.dataValues.product_photo}}" alt="{{this.dataValues.product_name}}">
@@ -11,10 +11,29 @@
         </div>
         <div class="card-content">
             <footer class="card-footer">
-                <a href="#" class="card-footer-item">View Product Description</a>
+                <button class="button viewItem">View Product</button>
                 <span class="card-footer-item">Price: ${{this.dataValues.price}}</span>
             </footer>
         </div>
     </div>
 </div>
-    {{/each}}
+
+<div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">View Product Under Construction</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <p class="title">Hi there!</p>
+            </br>
+            <p>Unfortunately our site is under construction. We are working hard to get the view product functionality
+                fully working. Please check back soon and thank you for your patience!</p>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button close">Close</button>
+        </footer>
+    </div>
+</div>
+{{/each}}
