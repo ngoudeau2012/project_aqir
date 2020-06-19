@@ -1,91 +1,94 @@
-<div>
-  
+<div class="sign-up-logo">
+  <p class="center logo">A<span class="pop">Q</span>IR</p>
 </div>
-    <div class="container">
-      <div class="column is-6 is-offset-3">
-        <form class="signup">
-          <div class="field form-group">
-            <label class="label firstName">First Name</label>
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                id="firstNameInput"
-                placeholder="Text input"
-              />
-            </div>
-          </div>
+<div class="container">
+  <div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Welcome to AQIR</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <p class="title">Hello!</p>
+        <p>Thank you for your interest in joining our new e-commerce platform. Regardless if you are a buyer or a
+          seller, we are lucky to have you!</p>
+        </br>
+        <p class="title is-5">What is <span class="logo-color">A<span class="pop">Q</span>IR?</span></p>
+        <p><span class="logo-color">A<span class="pop">Q</span>IR</span> is a global market place where any users can
+          easily buy and sell products. We've designed AQIR with the both the buyer and seller in mind. Our mission was
+          to provide both with the best possible user experience for purchasing and selling goods.</p>
+        </br>
+        <p class="title is-5">How do you join?</p>
+        <p>Thanks for asking! All you need to do is close this window and boom! There is a sign up form waiting for you.
+          Don't worry we don't plan on using your data for anything and wont spam you with emails.</p>
+        </br>
+        <p>*If you are already a user, thank you for showing your support and contributing to the platform! You already
+          know the drill.</p>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button close">Close</button>
+      </footer>
+    </div>
+  </div>
+  <div class="column is-6 is-offset-3">
+    <form class="signup">
+      <div class="field form-group">
+        <label class="label firstName">First Name</label>
+        <div class="control">
+          <input class="input" type="text" id="firstNameInput" placeholder="Text input" />
+        </div>
+      </div>
 
-          <div class="field form-group">
-            <label class="label lastName">Last Name</label>
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                id="lastNameInput"
-                placeholder="Text input"
-              />
-            </div>
-          </div>
+      <div class="field form-group">
+        <label class="label lastName">Last Name</label>
+        <div class="control">
+          <input class="input" type="text" id="lastNameInput" placeholder="Text input" />
+        </div>
+      </div>
 
-          <div class="field form-group">
-            <label class="label username">Username</label>
-            <div class="control has-icons-left">
-              <input
-                class="input"
-                type="text"
-                id="usernameInput"
-                placeholder="Text input"
-                value=""
-              />
-              <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>
+      <div class="field form-group">
+        <label class="label username">Username</label>
+        <div class="control has-icons-left">
+          <input class="input" type="text" id="usernameInput" placeholder="Text input" value="" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
 
-            </div>
-          </div>
+        </div>
+      </div>
 
-          <div class="field form-group">
-            <label class="label email">Email</label>
-            <div class="control has-icons-left has-icons-right">
-              <input
-                class="input"
-                type="email"
-                id="emailInput"
-                placeholder="email@email.com"
-              />
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
-            </div>
-          </div>
+      <div class="field form-group">
+        <label class="label email">Email</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input" type="email" id="emailInput" placeholder="email@email.com" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </div>
+      </div>
 
-          <div class="field form-group">
-            <label class="label password">Password</label>
-            <div class="control has-icons-left">
-              <input
-                class="input"
-                type="password"
-                id="passwordInput"
-                placeholder="Password"
-              />
-              <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-              </span>
-            </div>
-          </div>
+      <div class="field form-group">
+        <label class="label password">Password</label>
+        <div class="control has-icons-left">
+          <input class="input" type="password" id="passwordInput" placeholder="Password" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </div>
+      </div>
 
-          <div class="field is-grouped">
-            <div class="control">
-              <button type="submit" class="button is-link">Submit</button>
-            </div>
-            {{!-- <div class="control">
+      <div class="field is-grouped">
+        <div class="control">
+          <button type="submit" class="button is-link">Submit</button>
+        </div>
+        {{!-- <div class="control">
               <button class="button is-link is-light">Cancel</button>
             </div> --}}
-          </div>
-        </form>
-        <br />
-        <p>Or Log In <a href= "/login"><strong>here</strong></a></p>
       </div>
-    </div>
+    </form>
+    <br />
+    <p>Or Log In <a href="/login"><strong>here</strong></a></p>
+  </div>
+</div>
 <script type="text/javascript" src="js/signup.js"></script>

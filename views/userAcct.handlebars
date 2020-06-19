@@ -17,7 +17,8 @@
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          <a class="navbar-item has-text-primary navbar-end"><i class="fas fa-shopping-cart is-primary" href="/cart"></i></a>
+          <a class="navbar-item has-text-white navbar-end" href="/cart"><i
+              class="fas fa-shopping-cart is-primary"></i></a>
         </div>
         <div class="navbar-item">
           <div class="buttons">
@@ -29,23 +30,33 @@
       </div>
     </div>
   </nav>
-<section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <h2>User Name: <span class="member-user_name"></span></h2>
-      <h2>Email: <span class="member-user_email"></span></h2>
-      <h2>Name : <span class="member-user_first_name"></span><span class="member-last_name"></span></h2>
+  <nav class="level">
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Email</p>
+        <p class="title"> <span class="member-user_email"></span></p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Username</p>
+        <p><span class="member-user_name title"></span></p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Account Holder</p>
+        <p class="title"><span class="member-user_first_name"></span> <span class="member-last_name"></span></p>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Your Products for Sale</h1>
+
+  <div class="container">
+    <div class="row columns is-multiline">
+      {{> products/productCard}}
     </div>
   </div>
-</section>
-
-<h1>Your Products for Sale</h1>
-
-<div class="container">
-    <div class="row columns is-multiline">
-        {{!-- <div class="column is-3"> --}}
-            {{> products/productCard}}
-        {{!-- </div> --}}
-    </div>
-</div>
-<script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/home.js"></script>
