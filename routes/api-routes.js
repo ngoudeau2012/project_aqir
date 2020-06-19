@@ -73,12 +73,10 @@ module.exports = function(app) {
         product_description: req.body.product_description,
         UserId: req.user.id,
       })
-      .then(
-        res.redirect("/home")
-      );
+      .then(res.redirect("/home"));
   });
 
-  app.get("/", function(req, res) {
+  app.get("/signup", function(req, res) {
     res.render("signup");
   });
 
@@ -108,8 +106,36 @@ module.exports = function(app) {
         res.render("userAcct", products);
       });
   });
+  app.get("/asc", function(req, res) {
+    db.product
+      .findAll({
+        order: [["price"]],
+      })
+      .then(data => {
+        const prices = {
+          products: data,
+        };
+        res.render("home", prices);
+      });
+  });
+  app.get("/desc", function(req, res) {
+    db.product
+      .findAll({
+        order: [["price", "DESC"]],
+      })
+      .then(data => {
+        const high = {
+          products: data,
+        };
+        res.render("home", high);
+      });
+  });
 
-  app.get("/login", function(req, res) {
+  app.get("/cart", function(req, res) {
+    res.render("cart");
+  });
+
+  app.get("/", function(req, res) {
     res.render("login");
   });
 };
