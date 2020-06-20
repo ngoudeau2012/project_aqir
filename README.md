@@ -87,11 +87,7 @@ Since we were in a time crunch we hastily reverted the master and Development br
 This was our second mistake as we did not have any experience reverting branches.
 Our understanding was that merging always replaced the file being merged into, but it updates it.
 This meant that when we pulled to make changes it said we were already up to date and our changes wouldn't stick.
-.
-.
-.
-.
-.
+Eventually we were able to revert master all the way back to the beginning and force push to it (not usually recommended).
 
 The lessons learned are:
 
