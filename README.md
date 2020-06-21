@@ -49,12 +49,15 @@ The menu bar at the top has links to Home, Add Product, Account, Cart, and Logou
 
 For the user to add their own product for sale they will click Add Product.
 
-ADD PRODUCT PAGE
+* Add Product
+
+![AQIR Add Product](/public/screens/aqir_add_product.gif)
 
 User will fill out the form and click Submit.
 Now that product is added to the Home page.
 
-USER ACCOUNT PAGE
+* Account
+
 
 Clicking Account on the navbar will bring the user to the User Accout page.
 This displays the user's username, email, and name and all the products they have for sale.
