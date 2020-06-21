@@ -2,7 +2,7 @@
 
 AQIR is an exclusive retail website that allows users to buy and sell products from the comfort of their home.
 
-https://sleepy-scrubland-75835.herokuapp.com/
+https://thawing-castle-93200.herokuapp.com/home
 
 GIF HERE!
 
