@@ -4,8 +4,7 @@ AQIR is an exclusive retail website that allows users to buy and sell products f
 
 https://thawing-castle-93200.herokuapp.com/home
 
-GIF HERE!
-
+![AQIR Login and Home](./public/)
 ## Table of Contents
 
 * [Description](#description)
@@ -31,18 +30,17 @@ Once the account is created the user can buy and sell products to other users.
 
 ## Usage
 
-LOGIN PAGE HERE
-
-To get started, enter username and password in the login page. 
-If user does not have an account they can click on the sign in Here link.
-
-SIGNUP PAGE
+* Signup
 
 A welcome screen will appear to familiarize the user with AQIR.
 Once the user closes that screen they will see the Signup form.
 User will enter account information to create an account and click Submit.
 
-HOME PAGE
+* Login and Home
+
+![AQIR Login and Home](/public/screens/aqir_login_home.gif)
+
+If the user has an accoutn they will enter their username and password in the login page. 
 
 This will bring up the home page which shows all of the products for sale.
 Products can be sorted by Price High to Low or Low to High.
