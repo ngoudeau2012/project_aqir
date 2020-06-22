@@ -2,7 +2,7 @@
 
 AQIR is an exclusive retail website that allows users to buy and sell products from the comfort of their home.
 
-https://thawing-castle-93200.herokuapp.com/home
+https://thawing-castle-93200.herokuapp.com/
 
 ![AQIR Login and Home](/public/screens/aqir_home_screen.png)
 ## Table of Contents
