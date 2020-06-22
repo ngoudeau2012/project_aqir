@@ -1,3 +1,8 @@
+@font-face {font-family: "PhosphateInline";
+
+  src:url("https://db.onlinewebfonts.com/t/c4a64740ecb71342cea0a87b66ee15e0.woff2") format("woff2"), /* chrome firefox */
+  url("https://db.onlinewebfonts.com/t/c4a64740ecb71342cea0a87b66ee15e0.woff") format("woff"), /* chrome firefox */
+}
 form.signup,
 form.login {
   margin-top: 50px;
