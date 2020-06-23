@@ -4,8 +4,9 @@ $(document).ready(() => {
   const modalCloseBtn = $("button.close");
   const viewModal = $("button.viewItem");
 
-  viewModal.on("click", () => {
-    modalEl.addClass("is-active");
+  viewModal.on("click", (event) => {
+    $(event.target.previousElementSibling).addClass("is-active");
+    // console.log($(event.target.previousElementSibling));
   });
 
   modalClose.on("click", () => {
