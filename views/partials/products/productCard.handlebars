@@ -11,14 +11,40 @@
         </div>
         <div class="card-content">
             <footer class="card-footer">
-                <button class="button viewItem" data-toggle="modal" data-target="#myModal{{@index}}">View Item</button>
+
+<div class="modal" id={{dataValues.id}}>
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">{{dataValues.product_name}}</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <img src="{{dataValues.product_photo}}" alt="{{dataValues.product_name}}">
+            </br>
+            <p>{{dataValues.product_description}}</p>
+            <div>Category: {{dataValues.product_category}}</div>
+            <div>Quantity: {{dataValues.quantity}}</div>
+            <div>Price: ${{dataValues.price}}</div>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button submit addCart">Add to Cart</button>
+            <button class="button close">Close</button>
+        </footer>
+    </div>
+</div>
+
+                <button id="{{dataValues.id}}"class="button viewItem" data-toggle="modal" data-target="{{dataValues.id}}">View Item</button>
                 <span class="card-footer-item">Price: ${{dataValues.price}}</span>
             </footer>
         </div>
     </div>
 </div>
 
-<div class="modal">
+
+
+
+{{!-- <div class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
         <header class="modal-card-head">
@@ -35,5 +61,5 @@
             <button class="button close">Close</button>
         </footer>
     </div>
-</div>
+</div> --}}
 {{/products}}
